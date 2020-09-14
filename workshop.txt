@@ -1,0 +1,279 @@
+> show collections
+helloWoeld
+> use contact
+switched to db contact
+> db.createCollection('contactlist')
+{
+        "ok" : 0,
+        "errmsg" : "a collection 'contact.contactlist' already exists",
+        "code" : 48,
+        "codeName" : "NamespaceExists"
+}
+> db.contactlist.insertMany([{last_name:"ben lahmer", first_name:"fares",email:"
+fares@gmail.com",age:26},{last_name:"kefi", first_name:"seif", email:"kefi@gmail
+.com", age:15},{last_name:"fatnassi",first_name:"sarra",email:"sarra.f@gmail.Com
+",age:40},{last_name:"ben yahia",first_name:"rym",age:4},{last_name:"cherif",fir
+st_name:"sami", age:3}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f5fc6fb3bbde452e416959e"),
+                ObjectId("5f5fc6fb3bbde452e416959f"),
+                ObjectId("5f5fc6fb3bbde452e41695a0"),
+                ObjectId("5f5fc6fb3bbde452e41695a1"),
+                ObjectId("5f5fc6fb3bbde452e41695a2")
+        ]
+}
+> db.contactlist.find().pretty()
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae1"),
+        "last_name" : "ben lahmer",
+        "first_name" : "fares",
+        "email" : "fares@gmail.com",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae2"),
+        "last_name" : "kefi",
+        "first_name" : "fares",
+        "email" : "kefi@gmail.com",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae3"),
+        "last_name" : "fatnassi",
+        "first_name" : "sarra",
+        "email" : "sarra.f@gmail.com",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae4"),
+        "last_name" : "ben yahia",
+        "first_name" : "rym",
+        "age" : 4
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae5"),
+        "last_name" : "cherif",
+        "first_name" : "sami",
+        "age" : 3
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e416959e"),
+        "last_name" : "ben lahmer",
+        "first_name" : "fares",
+        "email" : "fares@gmail.com",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e416959f"),
+        "last_name" : "kefi",
+        "first_name" : "seif",
+        "email" : "kefi@gmail.com",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a0"),
+        "last_name" : "fatnassi",
+        "first_name" : "sarra",
+        "email" : "sarra.f@gmail.Com",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a1"),
+        "last_name" : "ben yahia",
+        "first_name" : "rym",
+        "age" : 4
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a2"),
+        "last_name" : "cherif",
+        "first_name" : "sami",
+        "age" : 3
+}
+> db.contactlist.find({Display all the contact list having age>18 and name
+...
+... ^C
+
+> db.contactlist.find({Display all the contact list having age>18 and name
+... containing "ah"^C
+
+> db.contactlist.find()
+{ "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae1"), "last_name" : "ben lahmer", "fir
+st_name" : "fares", "email" : "fares@gmail.com", "age" : 26 }
+{ "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae2"), "last_name" : "kefi", "first_nam
+e" : "fares", "email" : "kefi@gmail.com", "age" : 15 }
+{ "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae3"), "last_name" : "fatnassi", "first
+_name" : "sarra", "email" : "sarra.f@gmail.com", "age" : 40 }
+{ "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae4"), "last_name" : "ben yahia", "firs
+t_name" : "rym", "age" : 4 }
+{ "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae5"), "last_name" : "cherif", "first_n
+ame" : "sami", "age" : 3 }
+{ "_id" : ObjectId("5f5fc6fb3bbde452e416959e"), "last_name" : "ben lahmer", "fir
+st_name" : "fares", "email" : "fares@gmail.com", "age" : 26 }
+{ "_id" : ObjectId("5f5fc6fb3bbde452e416959f"), "last_name" : "kefi", "first_nam
+e" : "seif", "email" : "kefi@gmail.com", "age" : 15 }
+{ "_id" : ObjectId("5f5fc6fb3bbde452e41695a0"), "last_name" : "fatnassi", "first
+_name" : "sarra", "email" : "sarra.f@gmail.Com", "age" : 40 }
+{ "_id" : ObjectId("5f5fc6fb3bbde452e41695a1"), "last_name" : "ben yahia", "firs
+t_name" : "rym", "age" : 4 }
+{ "_id" : ObjectId("5f5fc6fb3bbde452e41695a2"), "last_name" : "cherif", "first_n
+ame" : "sami", "age" : 3 }
+> db.contactlist.find().pretty()
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae1"),
+        "last_name" : "ben lahmer",
+        "first_name" : "fares",
+        "email" : "fares@gmail.com",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae2"),
+        "last_name" : "kefi",
+        "first_name" : "fares",
+        "email" : "kefi@gmail.com",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae3"),
+        "last_name" : "fatnassi",
+        "first_name" : "sarra",
+        "email" : "sarra.f@gmail.com",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae4"),
+        "last_name" : "ben yahia",
+        "first_name" : "rym",
+        "age" : 4
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae5"),
+        "last_name" : "cherif",
+        "first_name" : "sami",
+        "age" : 3
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e416959e"),
+        "last_name" : "ben lahmer",
+        "first_name" : "fares",
+        "email" : "fares@gmail.com",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e416959f"),
+        "last_name" : "kefi",
+        "first_name" : "seif",
+        "email" : "kefi@gmail.com",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a0"),
+        "last_name" : "fatnassi",
+        "first_name" : "sarra",
+        "email" : "sarra.f@gmail.Com",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a1"),
+        "last_name" : "ben yahia",
+        "first_name" : "rym",
+        "age" : 4
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a2"),
+        "last_name" : "cherif",
+        "first_name" : "sami",
+        "age" : 3
+}
+> db.contactlist.find({'_id" : ObjectId("5f5fc6fb3bbde452e41695a2")})
+2020-09-14T21:43:18.092+0200 E  QUERY    [js] uncaught exception: SyntaxError: '
+' literal not terminated before end of script :
+@(shell):1:67
+> db.contactlist.find({"_id" : ObjectId("5f5fc6fb3bbde452e41695a2")})
+{ "_id" : ObjectId("5f5fc6fb3bbde452e41695a2"), "last_name" : "cherif", "first_n
+ame" : "sami", "age" : 3 }
+> db.contactlist.find({age:{$gt:18}}).pretty()
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae1"),
+        "last_name" : "ben lahmer",
+        "first_name" : "fares",
+        "email" : "fares@gmail.com",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae3"),
+        "last_name" : "fatnassi",
+        "first_name" : "sarra",
+        "email" : "sarra.f@gmail.com",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e416959e"),
+        "last_name" : "ben lahmer",
+        "first_name" : "fares",
+        "email" : "fares@gmail.com",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a0"),
+        "last_name" : "fatnassi",
+        "first_name" : "sarra",
+        "email" : "sarra.f@gmail.Com",
+        "age" : 40
+}
+> db.contactlist.find({name:{$exists:{"ah"}})
+... ^C
+
+> db.contactlist.update({last_name:"kefi"},{$et:{first_name:"seif"}})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 0,
+        "nModified" : 0,
+        "writeError" : {
+                "code" : 9,
+                "errmsg" : "Unknown modifier: $et. Expected a valid update modif
+ier or pipeline-style update specified as an array"
+        }
+})
+> db.contactlist.update({last_name:"kefi"},{$et:{first_name:"anis"}})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 0,
+        "nModified" : 0,
+        "writeError" : {
+                "code" : 9,
+                "errmsg" : "Unknown modifier: $et. Expected a valid update modif
+ier or pipeline-style update specified as an array"
+        }
+})
+> db.contactlist.update({last_name:"kefi"},{$set:{first_name:"anis"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.contactlist.remove({age:{$gt:5}})
+WriteResult({ "nRemoved" : 6 })
+> db.contactlist.find().pretty()
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae4"),
+        "last_name" : "ben yahia",
+        "first_name" : "rym",
+        "age" : 4
+}
+{
+        "_id" : ObjectId("5f5fc114a7f9a8edb36b9ae5"),
+        "last_name" : "cherif",
+        "first_name" : "sami",
+        "age" : 3
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a1"),
+        "last_name" : "ben yahia",
+        "first_name" : "rym",
+        "age" : 4
+}
+{
+        "_id" : ObjectId("5f5fc6fb3bbde452e41695a2"),
+        "last_name" : "cherif",
+        "first_name" : "sami",
+        "age" : 3
+}
+>
